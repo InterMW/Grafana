@@ -6,7 +6,7 @@ start_tls = false
 ssl_skip_verify = false
 
 bind_dn = "uid=%s,ou=People,dc=inter,dc=lan"
-
+search_filter = "(uid=%s)"
 group_search_base_dns = ["ou=People,dc=inter,dc=lan"]
 group_search_filter_user_attribute = "uid"
 timeout = 10
