@@ -6,7 +6,7 @@ start_tls = false
 ssl_skip_verify = false
 
 bind_dn = "cn=admin,dc=inter,dc=lan"
-bind_pass = "pass"
+bind_password = "pass"
 search_filter = "(uid=%s)"
 group_search_base_dns = ["cn=miners,dc=inter,dc=lan"]
 group_search_filter_user_attribute = "uid"
