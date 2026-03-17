@@ -5,7 +5,8 @@ use_ssl = false
 start_tls = false
 ssl_skip_verify = false
 
-bind_dn = "ou=people,dc=inter,dc=lan"
+bind_dn = "ou=admin,dc=inter,dc=lan"
+bind_password = 'pass'
 
 timeout = 10
 
@@ -13,7 +14,7 @@ search_filter = "(uid=%s)"
 
 
 search_base_dns = ["dc=inter,dc=lan"]
-bind_password = 'pass'
+
 
 [server.attributes]
 username = "cn"
