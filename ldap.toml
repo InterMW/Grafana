@@ -5,11 +5,12 @@ use_ssl = false
 start_tls = false
 ssl_skip_verify = false
 
-bind_dn = "uid=%s,ou=People,dc=inter,dc=lan"
+bind_dn = "cn=admin,dc=inter,dc=lan"
+bind_pass = "pass"
 search_filter = "(uid=%s)"
-group_search_base_dns = ["ou=People,dc=inter,dc=lan"]
+group_search_base_dns = ["cn=miners,dc=inter,dc=lan"]
 group_search_filter_user_attribute = "uid"
-timeout = 10
+timeout = 3
 
 group_search_filter = "(&(objectClass=posixGroup)(memberUid=%s))"
 
@@ -20,6 +21,6 @@ search_base_dns = ["dc=inter,dc=lan"]
 username = "cn"
 
 [[servers.group_mappings]]
-group_dn = "ou=People,dc=inter,dc=lan"
+group_dn = "*"
 org_role = "Admin"
 grafana_admin= true
