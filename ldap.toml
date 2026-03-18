@@ -21,8 +21,7 @@ search_base_dns = ["dc=inter,dc=lan"]
 name = "givenName"
 surname = "sn"
 username = "cn"
-member_of = "memberOf"
-email =  "email"
+email =  "mail"
 
 
 [[servers.group_mappings]]
