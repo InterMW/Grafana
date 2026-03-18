@@ -5,10 +5,9 @@ use_ssl = false
 start_tls = false
 ssl_skip_verify = false
 
-bind_dn = "cn=admin,dc=inter,dc=lan"
-bind_password = "pass"
+bind_dn = "uid=%,ou=People,dc=inter,dc=lan"
 search_filter = "(uid=%s)"
-group_search_base_dns = ["cn=miners,dc=inter,dc=lan"]
+group_search_base_dns = ["cn=miners,ou=Groups,dc=inter,dc=lan"]
 group_search_filter_user_attribute = "uid"
 timeout = 3
 
