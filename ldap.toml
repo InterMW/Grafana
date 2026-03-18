@@ -19,6 +19,7 @@ search_base_dns = ["dc=inter,dc=lan"]
 
 [server.attributes]
 username = "cn"
+email = "email"
 
 [[servers.group_mappings]]
 group_dn = "*"
