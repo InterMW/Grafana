@@ -17,7 +17,7 @@ group_search_filter = "(&(objectClass=posixGroup)(memberUid=%s))"
 search_base_dns = ["dc=inter,dc=lan"]
 
 
-[server.attributes]
+[servers.attributes]
 name = "givenName"
 surname = "sn"
 username = "cn"
