@@ -18,8 +18,12 @@ search_base_dns = ["dc=inter,dc=lan"]
 
 
 [server.attributes]
-username = "uid"
-email = "mail"
+name = "givenName"
+surname = "sn"
+username = "cn"
+member_of = "memberOf"
+email =  "email"
+
 
 [[servers.group_mappings]]
 group_dn = "*"
