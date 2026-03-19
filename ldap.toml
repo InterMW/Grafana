@@ -8,7 +8,7 @@ ssl_skip_verify = false
 bind_dn = "cn=admin,dc=inter,dc=lan"
 bind_password = "pass"
 search_filter = "(uid=%s)"
-group_search_base_dns = ["cn=miners,ou=Groups,dc=inter,dc=lan"]
+group_search_base_dns = ["cn=miners,ou=Groups,dc=inter,dc=lan","cn=elevated,ou=Groups,dc=inter,dc=lan"]
 group_search_filter_user_attribute = "uid"
 timeout = 3
 
