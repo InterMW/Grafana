@@ -4,10 +4,10 @@ datasources:
   - name: InfluxDB_v1
     type: influxdb
     access: proxy
-    user: grafana
+    user: jbmelberg
     url: http://10.0.0.3:8086
     jsonData:
       dbName: site
       httpMode: GET
     secureJsonData:
-      password: JUJqF9A5L0VbKFAEZuFYP1m9FGv8_3XqbR0gpqH_OEeQDMX9NxpjOia_-YJJ3Wj6zK-xCn6JtVevqbzKyw4wSQ==
+      password: grafanapass
