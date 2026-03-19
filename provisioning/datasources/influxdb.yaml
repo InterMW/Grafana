@@ -1,13 +1,12 @@
 apiVersion: 1
 
 datasources:
-  - name: InfluxDB_v1
+  - name: InfluxDB_v2_InfluxQL
     type: influxdb
     access: proxy
-    user: jbmelberg
     url: http://10.0.0.3:8086
     jsonData:
       dbName: site
-      httpMode: GET
+      httpHeaderName1: 'Authorization'
     secureJsonData:
-      password: grafanapass
+      httpHeaderValue1: 'Token JUJqF9A5L0VbKFAEZuFYP1m9FGv8_3XqbR0gpqH_OEeQDMX9NxpjOia_-YJJ3Wj6zK-xCn6JtVevqbzKyw4wSQ=='
