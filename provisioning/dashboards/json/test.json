@@ -1,0 +1,138 @@
+{
+  "id": 123133,
+  "gridPos": {
+    "h": 8,
+    "w": 12,
+    "x": 0,
+    "y": 0
+  },
+  "type": "timeseries",
+  "title": "VM Activity",
+  "datasource": {
+    "type": "influxdb",
+    "uid": "U6yJ5KnVk"
+  },
+  "fieldConfig": {
+    "defaults": {
+      "custom": {
+        "drawStyle": "line",
+        "lineInterpolation": "linear",
+        "barAlignment": 0,
+        "lineWidth": 1,
+        "fillOpacity": 0,
+        "gradientMode": "none",
+        "spanNulls": false,
+        "showPoints": "auto",
+        "pointSize": 5,
+        "stacking": {
+          "mode": "none",
+          "group": "A"
+        },
+        "axisPlacement": "auto",
+        "axisLabel": "",
+        "axisColorMode": "text",
+        "scaleDistribution": {
+          "type": "linear"
+        },
+        "axisCenteredZero": false,
+        "hideFrom": {
+          "tooltip": false,
+          "viz": false,
+          "legend": false
+        },
+        "thresholdsStyle": {
+          "mode": "off"
+        }
+      },
+      "color": {
+        "mode": "palette-classic"
+      },
+      "mappings": [],
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          {
+            "color": "green",
+            "value": null
+          },
+          {
+            "color": "red",
+            "value": 80
+          }
+        ]
+      }
+    },
+    "overrides": [
+      {
+        "matcher": {
+          "id": "byName",
+          "options": "CPU"
+        },
+        "properties": [
+          {
+            "id": "custom.axisLabel",
+            "value": "CPU %"
+          }
+        ]
+      },
+      {
+        "matcher": {
+          "id": "byName",
+          "options": "CPU"
+        },
+        "properties": [
+          {
+            "id": "custom.axisSoftMin",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "matcher": {
+          "id": "byName",
+          "options": "CPU"
+        },
+        "properties": [
+          {
+            "id": "custom.axisSoftMax",
+            "value": 100
+          }
+        ]
+      }
+    ]
+  },
+  "options": {
+    "tooltip": {
+      "mode": "single",
+      "sort": "none"
+    },
+    "legend": {
+      "showLegend": true,
+      "displayMode": "list",
+      "placement": "bottom",
+      "calcs": []
+    }
+  },
+  "targets": [
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "U6yJ5KnVk"
+      },
+      "hide": true,
+      "query": "from(bucket: \"monitoring\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"server_info\")\n  |> filter(fn: (r) => r[\"_field\"] == \"cpu\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")",
+      "refId": "A"
+    },
+    {
+      "datasource": {
+        "name": "Expression",
+        "type": "__expr__",
+        "uid": "__expr__"
+      },
+      "expression": "$A * 100",
+      "hide": false,
+      "refId": "CPU",
+      "type": "math"
+    }
+  ]
+}
