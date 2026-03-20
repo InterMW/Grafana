@@ -309,7 +309,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "U6yJ5KnVk"
+        "uid": "P5697886F9CA74929"
       },
       "fieldConfig": {
         "defaults": {
