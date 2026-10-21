@@ -7,4 +7,4 @@ COPY provisioning/datasources/ /etc/grafana/provisioning/datasources/
 
 COPY provisioning/dashboards/*.yaml /etc/grafana/provisioning/dashboards/
 
-COPY provisioning/dashboards/json/test.json /var/lib/grafana/dashboards/test.json
+COPY provisioning/dashboards/json/*.json /var/lib/grafana/dashboards/
